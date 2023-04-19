@@ -3,6 +3,8 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
+
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -31,10 +33,13 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-s>","<CMD>:w<CR>", opts)
+keymap("i", "","<CMD>:w<CR>", { noremap = true })
 
+-- 'i', '"', '""<left>', { noremap = true }
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
+--keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+--keymap("n", "<C-s>","<CMD>:w<CR>", opts)
 -- Close buffers
 keymap("n", "<C-w>", "<cmd>Bdelete!<CR>", opts)
 
@@ -53,10 +58,11 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
+
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)

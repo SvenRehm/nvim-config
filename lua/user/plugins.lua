@@ -101,6 +101,10 @@ return packer.startup(function(use)
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
 
+--prettier
+use {"prettier/vim-prettier"}
+
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -122,7 +126,8 @@ return packer.startup(function(use)
     end
 })
 
- 
+ --codeium
+ use 'Exafunction/codeium.vim'
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" }
